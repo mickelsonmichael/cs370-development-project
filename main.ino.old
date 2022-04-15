@@ -1,0 +1,40 @@
+#include <HX711.h>
+
+#define CLK 6 // green
+#define DAT 5 // blue
+
+HX711 scale;
+
+void setup() {
+  Serial.begin(9600);
+
+  scale.begin(DAT, CLK);
+
+  wait("\nEmpty the scale, press a key to tare");
+  scale.tare();
+
+  read();
+  
+  wait("Place 2 lbs onto the scale, press any key to calibrate");
+  scale.calibrate_scale(2, 10);
+
+  read();
+}
+
+void loop() {
+
+  read();
+
+  delay(500);
+}
+
+void read() {
+  Serial.print("READ: ");
+  Serial.println(scale.get_units(10));
+}
+
+void wait(const char* msg) {
+  Serial.println(msg);
+  while(!Serial.available());
+  while(Serial.available()) Serial.read();
+}

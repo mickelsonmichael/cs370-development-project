@@ -13,10 +13,10 @@ The goal of this project is to utilize a small, IoT device to signal whether or 
 1. Shore up the logic on when something is on the scale or not
 2. Use the [WiFi library](https://github.com/arduino-libraries/ArduinoHttpClient) to hook the board into a network
 3. Decide whether to use IoT Hub or a Lambda/Function to send notifications
-  - Probably will end up being whichever is free or cheaper
+    - Probably will end up being whichever is free or cheaper
 4. Hook up logic to either [send a message to IoT Hub](https://github.com/arduino/ArduinoCloudProviderExamples) or [send an HTTP request to a Function/Lambda](https://github.com/arduino-libraries/ArduinoHttpClient)
 5. _Bonus_: Utilize the [on-board LED (e.g. `LED_BUILTIN`)](https://www.arduino.cc/reference/en/language/variables/constants/constants/) or the purchased LED screen
-  - Purchased screen will require additional connectors, apparently, so this may not be the simplest option
+    - Purchased screen will require additional connectors, apparently, so this may not be the simplest option
 
 ## Useful Links
 
